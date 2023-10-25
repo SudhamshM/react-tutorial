@@ -1,32 +1,17 @@
-const handleClick = function (event) {
-  console.log("Entered handleClick function...");
-  console.log("Printing event info: ", event);
-  console.log("You clicked it!");
-};
-
-/**
- * The function to handle a click triggered anonymously
- * @param {Event} event
- * @param {string} name
- */
-const handleAnonymousClick = function (event, name) {
-  console.log("Entered handleAnonymousClick function...");
-  console.log("Printing event target: ", event.target);
-  console.log(`Hello to you, ${name}!`);
-};
-
 const Home = () => {
+  let name = "Godspeed";
+  console.log("Home component started, name value: ", name);
+  const handleClick = function (event) {
+    console.log("Entered handleClick function...");
+    name = "Zoom";
+    console.log("Clicked, name value: ", name);
+  };
+
   return (
     <div className="home">
       <h2>Homepage</h2>
+      <p>{name}</p>
       <button onClick={handleClick}>Click me!</button>
-      <button
-        onClick={function (event) {
-          handleAnonymousClick(event, "Zoom");
-        }}
-      >
-        Anonymous click!
-      </button>
     </div>
   );
 };
