@@ -29,8 +29,15 @@
 .navbar a:hover {
   color: #f1356d;
 }
+
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+}
+
+.createBtn {
+  color: white !important;
+  background-color: #f1356d;
+  border-radius: 8px;
 }
