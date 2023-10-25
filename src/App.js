@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./Navbar";
 import Home from "./Home";
 
@@ -12,12 +11,6 @@ function App() {
       <Navbar />
       <div className="content">
         <Home />
-        {/* <h1>{title}</h1>
-        <p>Liked {likes} times.</p>
-        <p>{45}</p>
-        <p>{[1, 2, 54, 6]}</p>
-        <a href={link}>Google</a>
-        <h2>App Component</h2> */}
       </div>
     </div>
   );
