@@ -1,10 +1,10 @@
 import React from "react";
 
-const BlogList = function (props) {
+const BlogList = function ({ blogs, title }) {
   console.log("Entered BlogList component...");
 
-  const blogs = props.blogs;
-  const title = props.title;
+  // const blogs = props.blogs;
+  // const title = props.title;
 
   console.log("Blogs: ", blogs);
 
