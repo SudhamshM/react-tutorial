@@ -13,24 +13,16 @@ const BlogList = function ({ blogs, title, deleteHandler }) {
           <div
             className="blog-preview"
             key={blog.id}
-            style={{ position: "relative" }}
           >
             <h2>{blog.title}</h2>
             <p>Written by {blog.author}</p>
             <button
-              className="createBtn"
-              style={{
-                position: "absolute",
-                border: "none",
-                top: "20%",
-                right: "5%",
-                cursor: "pointer",
-              }}
+              className="btn deleteBtn"
               onClick={function () {
                 deleteHandler(blog.id);
               }}
             >
-              Delete
+              Delete &#x274C;
             </button>
           </div>
         ))}

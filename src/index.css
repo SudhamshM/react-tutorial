@@ -36,10 +36,12 @@
   padding: 20px;
 }
 
-.createBtn {
+.createBtn,
+.btn {
   color: white !important;
   background-color: #f1356d;
   border-radius: 8px;
+  border: none;
 }
 
 /* blog previews / list */
@@ -47,6 +49,7 @@
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
+  position: relative;
 }
 .blog-preview:hover {
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
@@ -55,4 +58,24 @@
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
+}
+
+.deleteBtn {
+  position: absolute;
+  border: none;
+  top: 20%;
+  right: 5%;
+  cursor: pointer;
+  transition: font-weight ease-in-out 0.1s, width ease-in-out 0.4s;
+  background-color: #1b1616;
+  width: 15%;
+}
+.deleteBtn:hover {
+  font-weight: bold;
+  background-color: #9dff00;
+  color: #1b1616 !important;
+}
+
+.deleteBtn:active {
+  width: 18%;
 }
