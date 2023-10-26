@@ -12,13 +12,15 @@ const Home = () => {
       id: 3,
     },
   ]);
+
+  function handleDelete(blogId) {
+    console.log("Entered handleDelete function...");
+    setBlogs(blogs.filter((blog) => blog.id !== blogId));
+  }
+
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs" />
-      <BlogList
-        blogs={blogs.filter((blog) => blog.author === "mario")}
-        title="Mario's Blogs"
-      />
+      <BlogList blogs={blogs} title="All Blogs" deleteHandler={handleDelete} />
     </div>
   );
 };
