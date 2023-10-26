@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -12,6 +12,13 @@ const Home = () => {
       id: 3,
     },
   ]);
+
+  // useEffect function runs EVERY TIME there is a render of the component,
+  // such as whenever the state changes and causes a render, useEffect runs
+  useEffect(function () {
+    console.log("Entered useEffect function...")
+    console.log("Blogs list: ", blogs)
+  })
 
   function handleDelete(blogId) {
     console.log("Entered handleDelete function...");
