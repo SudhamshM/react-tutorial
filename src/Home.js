@@ -13,12 +13,14 @@ const Home = () => {
     },
   ]);
 
+  const [name, setName] = useState('mario')
+
   // useEffect function runs EVERY TIME there is a render of the component,
   // such as whenever the state changes and causes a render, useEffect runs
   useEffect(function () {
     console.log("Entered useEffect function...")
     console.log("Blogs list: ", blogs)
-  })
+  }, [name])
 
   function handleDelete(blogId) {
     console.log("Entered handleDelete function...");
@@ -28,6 +30,8 @@ const Home = () => {
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs" deleteHandler={handleDelete} />
+      <button className="btn" onClick={() => setName('luigi')}>Change Name</button>
+      <p>{name}</p>
     </div>
   );
 };

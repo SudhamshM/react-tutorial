@@ -42,6 +42,7 @@
   background-color: #f1356d;
   border-radius: 8px;
   border: none;
+  cursor: pointer;
 }
 
 /* blog previews / list */
