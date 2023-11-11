@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "My new website",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem odit voluptatibus vel officia quas eveniet impedit, commodi doloremque aperiam nihil consectetur harum illum unde sequi esse reiciendis hic aspernatur dolore quo distinctio nemo at. Voluptas commodi optio eos aspernatur quas quasi molestiae, fugit ullam sint quibusdam. Laboriosam, eum facilis!",
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "title": "Welcome party!",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, rem obcaecati earum, ipsam tempore maiores architecto vel aliquid quas, assumenda inventore harum at fugit totam!",
+      "author": "yoshi",
+      "id": 2
+    },
+    {
+      "title": "Web dev top tips",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam architecto ab voluptatem, maiores consequuntur dignissimos atque nulla quos dolores nam eligendi minima. Sunt quisquam hic facere excepturi nihil optio voluptas?",
+      "author": "mario",
+      "id": 3
+    }
+  ]
+}

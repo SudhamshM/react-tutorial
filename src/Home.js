@@ -2,16 +2,7 @@ import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([
-    { title: "My new website", body: "lorem ipsum...", author: "mario", id: 1 },
-    { title: "Welcome party!", body: "lorem ipsum...", author: "yoshi", id: 2 },
-    {
-      title: "Web dev top tips",
-      body: "lorem ipsum...",
-      author: "mario",
-      id: 3,
-    },
-  ]);
+  const [blogs, setBlogs] = useState(null);
 
   const [name, setName] = useState('mario')
 
@@ -19,8 +10,15 @@ const Home = () => {
   // such as whenever the state changes and causes a render, useEffect runs
   useEffect(function () {
     console.log("Entered useEffect function...")
-    console.log("Blogs list: ", blogs)
-  }, [name])
+    fetch("http://localhost:8000/blogs")
+      .then(res => {
+        return res.json()
+      })
+      .then(data => {
+        console.log("Data: ", data);
+        setBlogs(data)
+      })
+  }, [])
 
   function handleDelete(blogId) {
     console.log("Entered handleDelete function...");
@@ -29,7 +27,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs" deleteHandler={handleDelete} />
+      {blogs && <BlogList blogs={blogs} title="All Blogs" deleteHandler={handleDelete} />}
       <button className="btn" onClick={() => setName('luigi')}>Change Name</button>
       <p>{name}</p>
     </div>
