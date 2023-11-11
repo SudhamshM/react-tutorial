@@ -20,16 +20,9 @@ const Home = () => {
       })
   }, [])
 
-  function handleDelete(blogId) {
-    console.log("Entered handleDelete function...");
-    setBlogs(blogs.filter((blog) => blog.id !== blogId));
-  }
-
   return (
     <div className="home">
-      {blogs && <BlogList blogs={blogs} title="All Blogs" deleteHandler={handleDelete} />}
-      <button className="btn" onClick={() => setName('luigi')}>Change Name</button>
-      <p>{name}</p>
+      {blogs && <BlogList blogs={blogs} title="All Blogs" />}
     </div>
   );
 };
