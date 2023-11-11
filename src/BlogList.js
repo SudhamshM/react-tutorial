@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlogList = function ({ blogs, title, deleteHandler }) {
+const BlogList = function ({ blogs, title }) {
   console.log("Entered BlogList component...");
   console.log("Blogs: ", blogs);
 
@@ -16,14 +16,6 @@ const BlogList = function ({ blogs, title, deleteHandler }) {
           >
             <h2>{blog.title}</h2>
             <p>Written by {blog.author}</p>
-            <button
-              className="btn deleteBtn"
-              onClick={function () {
-                deleteHandler(blog.id);
-              }}
-            >
-              Delete &#x274C;
-            </button>
           </div>
         ))}
       </div>
