@@ -11,8 +11,9 @@ const useFetch = (url) => {
     // such as whenever the state changes and causes a render, useEffect runs
     useEffect(function () {
         console.log("Entered useEffect function...")
+        const abortCtrl = new AbortController();
         setTimeout(() => {
-            fetch(url)
+            fetch(url, { signal: abortCtrl.signal })
                 .then(res => {
                     if (!res.ok) {
                         throw Error("Could not fetch for that resource.")
@@ -26,11 +27,16 @@ const useFetch = (url) => {
                     setError(null)
                 })
                 .catch((e) => {
-                    setError(e.message);
-                    setIsPending(false)
+                    if (e.name === "AbortError") {
+                        console.log("Fetch aborted.");
+                    } else {
+                        setError(e.message);
+                        setIsPending(false);
+                    }
                 })
         }, 1000);
 
+        return () => abortCtrl.abort()
     }, [url])
 
     return { data, isPending, error }
